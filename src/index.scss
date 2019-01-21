@@ -1,0 +1,204 @@
+$fontFamily: 'Lato', Helvetica, Arial, Sans-serif;
+//Colors
+$color: (
+  bgWhite: #ffffff,
+  bgMain: #FBFBFD,
+  bgItem: #f3f3f5,
+  bgBlue: #179AD8,
+  bgBlueLight: lighten(#179AD8, 8%),
+  bgBlueLight-15: lighten(#179AD8, 15%),
+  bgBlueLight-50: lighten(#179AD8, 50%),
+  btnRed: #DE2E44,
+  btnRedLight-40: lighten(#DE2E44, 40%),
+  btnRedLight-10: lighten(#DE2E44, 10%),
+);
+@function colors($color-id) {
+  @return map-get($color, $color-id)
+}
+//Additional style variables
+$btnPadding: 8px;
+$textShadow: 0 1px 2px rgba(0,0,0,0.35);
+
+//Responsive
+$paddingPrimary: 24px;
+$paddingTablet: 80px;
+$desktop: 1024px;
+$tablet: 600px;
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content
+  }
+}
+@mixin tablet {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+body{
+  font-family: $fontFamily;
+  background: colors(bgMain);
+  margin: 0;
+}
+
+.view input[type="checkbox"], label input[type="checkbox"]{
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background-color: colors(bgWhite);
+  margin: auto;
+  padding-bottom: 32px;
+  @include desktop {
+    margin-top: 24px;
+    width: 60%;
+    max-width: 700px;
+    height: auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  }
+  header{
+    background-color: colors(bgBlue);
+    padding: $paddingPrimary;
+    display: block;
+    @include tablet {
+      padding-right: $paddingTablet;
+      padding-left: $paddingTablet;
+    }
+    .page-title {
+      color: white;
+      margin-top: 0;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      font-size: 2.5em;
+    }
+      .todo-input {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1em;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        &:hover {
+          box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+      }
+  }
+  .main {
+    padding: $paddingPrimary;
+    @include tablet {
+      padding-right: $paddingTablet;
+      padding-left: $paddingTablet;
+    }
+    ul{
+      list-style-type: none;
+      padding-inline-start: 0px;
+      li{
+        position: relative;
+        padding: 16px;
+        margin: 16px 0;
+        background-color: colors(bgItem);
+        .view {
+          position: relative;
+          overflow: auto;
+          label {
+            vertical-align: middle;
+          }
+          .destroy {
+            cursor: pointer;
+            color: colors(btnRed);
+            background-color: rgba(0,0,0,0);
+            text-transform: uppercase;
+            font-weight: bold;
+            float: right;
+            border: none;
+            padding: $btnPadding;
+            &:hover {
+              background-color: colors(btnRedLight-40);
+            }
+          }
+        }
+      }
+      .is-completed {
+        background-color: colors(bgBlueLight-50);
+        border-left: 4px solid colors(bgBlue);
+      }
+    }
+    .footer {
+      margin: 16px 0;
+      .filters {
+        padding: 16px 0 24px 0;
+      }
+      ul {
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li {
+          flex-grow: 1;
+          text-align: center;
+          background-color: colors(bgBlueLight-50);
+          color: colors(bgBlue);
+          padding: 0;
+          border: 1px solid colors(bgBlueLight-15);
+          border-radius: 0;
+          &:hover {
+            background-color: colors(bgBlue);
+          }
+          a {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 8px;
+            &:hover {
+              background-color: colors(bgBlue);
+              color: white;
+              text-shadow: $textShadow;
+              border: none;
+            }
+          }
+          .is-selected {
+            background-color: colors(bgBlueLight);
+            color: white;
+            border: none;
+            text-shadow: $textShadow;
+          }
+        }
+      }
+      .clear-completed {
+        display: block;
+        margin: auto;
+        font-size: 0.75em;
+        font-weight: bold;
+        background-color: colors(btnRedLight-40);
+        color: colors(btnRed);
+        border: none;
+        padding: $btnPadding + 4;
+        cursor: pointer;
+        text-transform: uppercase;
+        &:hover {
+          background-color: colors(btnRedLight-10);
+          color: white;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

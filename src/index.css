@@ -1,0 +1,133 @@
+body, html {
+  height: 100%; }
+
+body {
+  font-family: "Lato", Helvetica, Arial, Sans-serif;
+  background: #FBFBFD;
+  margin: 0; }
+
+.view input[type="checkbox"], label input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle; }
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  margin: auto;
+  padding-bottom: 32px; }
+  @media (min-width: 1024px) {
+    .app {
+      margin-top: 24px;
+      width: 60%;
+      max-width: 700px;
+      height: auto;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); } }
+  .app header {
+    background-color: #179AD8;
+    padding: 24px;
+    display: block; }
+    @media (min-width: 600px) and (max-width: 1023px) {
+      .app header {
+        padding-right: 80px;
+        padding-left: 80px; } }
+    .app header .page-title {
+      color: white;
+      margin-top: 0;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      font-size: 2.5em; }
+    .app header .todo-input {
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 1em;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+      .app header .todo-input:hover {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); }
+  .app .main {
+    padding: 24px; }
+    @media (min-width: 600px) and (max-width: 1023px) {
+      .app .main {
+        padding-right: 80px;
+        padding-left: 80px; } }
+    .app .main ul {
+      list-style-type: none;
+      padding-inline-start: 0px; }
+      .app .main ul li {
+        position: relative;
+        padding: 16px;
+        margin: 16px 0;
+        background-color: #f3f3f5; }
+        .app .main ul li .view {
+          position: relative;
+          overflow: auto; }
+          .app .main ul li .view label {
+            vertical-align: middle; }
+          .app .main ul li .view .destroy {
+            cursor: pointer;
+            color: #DE2E44;
+            background-color: rgba(0, 0, 0, 0);
+            text-transform: uppercase;
+            font-weight: bold;
+            float: right;
+            border: none;
+            padding: 8px; }
+            .app .main ul li .view .destroy:hover {
+              background-color: #fadee2; }
+      .app .main ul .is-completed {
+        background-color: #f1f9fd;
+        border-left: 4px solid #179AD8; }
+    .app .main .footer {
+      margin: 16px 0; }
+      .app .main .footer .filters {
+        padding: 16px 0 24px 0; }
+      .app .main .footer ul {
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        padding: 0; }
+        .app .main .footer ul li {
+          flex-grow: 1;
+          text-align: center;
+          background-color: #f1f9fd;
+          color: #179AD8;
+          padding: 0;
+          border: 1px solid #4fbaec;
+          border-radius: 0; }
+          .app .main .footer ul li:hover {
+            background-color: #179AD8; }
+          .app .main .footer ul li a {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 8px; }
+            .app .main .footer ul li a:hover {
+              background-color: #179AD8;
+              color: white;
+              text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+              border: none; }
+          .app .main .footer ul li .is-selected {
+            background-color: #2fade9;
+            color: white;
+            border: none;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); }
+      .app .main .footer .clear-completed {
+        display: block;
+        margin: auto;
+        font-size: 0.75em;
+        font-weight: bold;
+        background-color: #fadee2;
+        color: #DE2E44;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        text-transform: uppercase; }
+        .app .main .footer .clear-completed:hover {
+          background-color: #e55a6b;
+          color: white; }
+
+/*# sourceMappingURL=index.css.map */
